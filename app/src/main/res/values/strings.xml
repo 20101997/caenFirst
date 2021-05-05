@@ -1,0 +1,90 @@
+<resources>
+
+    <string name="app_name">STS Trasporti</string>
+
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="attention">Attenzione</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+    <string name="yes">Sì</string>
+    <string name="no">No</string>
+    <string name="container_value">Contenitore %1$s</string>
+    <string name="press_to_exit_app">Premi nuovamente per chiudere l\'app</string>
+
+    <!-- LoginFragment -->
+    <string name="user">Utente</string>
+    <string name="password">Password</string>
+    <string name="password_forgot">Password dimenticata?</string>
+    <string name="login">Accedi</string>
+
+    <!-- HomeFragment -->
+    <string name="today_destinations_label">Le Tue destinazioni di oggi</string>
+    <string name="hour">ore\u00A0</string>
+    <string name="departments">Reparti:\u00A0</string>
+    <string name="label_no_travel_found">Nessun tragitto trovato</string>
+    <string name="logout_label">Logout</string>
+
+    <!-- Home Top Sheet -->
+    <string name="top_sheet_next_stop_label">La tua prossima tappa</string>
+    <string name="top_sheet_arrival_time_label">Orario di arrivo presso la Struttura</string>
+    <string name="top_sheet_departments_label">Reparti da visitare</string>
+    <string name="top_sheet_start_hint_label">Premi Start per iniziare il viaggio e il tracciamento GPS</string>
+    <string name="start_label">START</string>
+
+    <!-- Home Bottom Sheet -->
+    <string name="stop_travel">STOP VIAGGIO</string>
+    <string name="stop_instruction">Premi Stop per terminare il viaggio e il tracciamento GPS.</string>
+    <string name="arrival_communication">Comunica il tuo arrivo presso la struttura</string>
+
+    <!-- DepartmentsFragment -->
+    <string name="department">Reparti</string>
+    <string name="department_back_alert_message">Così facendo non potrai aggiungere nuovi contenitori alla tappa, sei sicuro?</string>
+
+    <!-- DepartmentActionFragment -->
+    <string name="delivery">Consegna</string>
+    <string name="withdraw">Ritiro</string>
+
+    <!-- AddContainerFragment -->
+    <string name="hospital_of_origin">Ospedale di Provenienza</string>
+    <string name="department_of_origin">Reparto di Provenienza</string>
+    <string name="department_destination">Destinazione Reparto</string>
+    <string name="destination_structure">Destinazione Struttura</string>
+    <string name="temperature_tracking">Tracciamento Temperatura</string>
+    <string name="scan_single_qrcode">Scan QR-Code singolo</string>
+    <string name="scan_multiple_qrcode">Scan QR-Code multiplo</string>
+    <string name="select_structure_destination">Seleziona Struttura di Destinazione</string>
+    <string name="select_department_destination">Seleziona Reparto di Destinazione</string>
+    <string name="note_camp">Campo note</string>
+    <string name="write_a_note">Scrivere una nota</string>
+    <string name="select_structure_to_continue">Seleziona una struttura per continuare</string>
+    <string name="select_department_to_continue">Seleziona un reparto per continuare</string>
+    <string name="edit">MODIFICA</string>
+
+    <!-- ScanContainerFragment -->
+    <string name="scan_qr_code">Scan \u000AQR-Code</string>
+
+    <!-- ProductsFragment -->
+    <string name="product_selection_label">Selezione Prodotti</string>
+    <string name="selected_products">Prodotti Selezionati</string>
+    <string name="save_and_continue">SALVA E CONTINUA</string>
+    <string name="save_and_close">SALVA E CHIUDI</string>
+
+    <!-- ContainersFragment -->
+    <string name="new_container">Nuovo Contenitore</string>
+    <string name="sign_delivery">FIRMA CONSEGNA</string>
+    <string name="sign_withdrawal">FIRMA RITIRO</string>
+    <string name="containers_back_alert_message">Così facendo perderai i contenitori salvati, sei sicuro?</string>
+
+    <!-- SignatureFragment -->
+    <string name="sign">Firma</string>
+    <string name="signature_title_delivery">Firma Consegna</string>
+    <string name="signature_title_withdrawal">Firma Ritiro</string>
+    <string name="department_signature">Firma del Reparto</string>
+    <string name="driver_signature">Firma Operatore</string>
+    <string name="close">CHIUDI</string>
+    <string name="close_delivery">CHIUDI CONSEGNA</string>
+    <string name="close_withdrawal">CHIUDI RITIRO</string>
+
+</resources>

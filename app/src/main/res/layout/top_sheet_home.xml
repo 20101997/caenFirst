@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_top_sheet_gradient"
+    android:elevation="16dp"
+    android:paddingVertical="24dp">
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="8dp"
+        android:src="@drawable/ic_arrow_back_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/destination_structure_title"
+        style="@style/TextAppearance.App.TopSheet.Label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="24dp"
+        android:labelFor="@id/destination_structure_value"
+        android:text="@string/top_sheet_next_stop_label"
+        app:layout_constraintTop_toBottomOf="@id/back_button" />
+
+    <TextView
+        android:id="@+id/destination_structure_value"
+        style="@style/TextAppearance.App.TopSheet.Value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="12dp"
+        app:drawableStartCompat="@drawable/ic_map_pin"
+        app:layout_constraintTop_toBottomOf="@id/destination_structure_title"
+        tools:text="Ospedale dell'Angelo, Mestre" />
+
+    <TextView
+        android:id="@+id/arrival_time_title"
+        style="@style/TextAppearance.App.TopSheet.Label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="32dp"
+        android:labelFor="@id/arrival_time_value"
+        android:text="@string/top_sheet_arrival_time_label"
+        app:layout_constraintTop_toBottomOf="@id/destination_structure_value" />
+
+    <TextView
+        android:id="@+id/arrival_time_value"
+        style="@style/TextAppearance.App.TopSheet.Value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="12dp"
+        app:drawableStartCompat="@drawable/ic_clock"
+        app:layout_constraintTop_toBottomOf="@id/arrival_time_title"
+        tools:text="09.30" />
+
+    <TextView
+        android:id="@+id/departments_title"
+        style="@style/TextAppearance.App.TopSheet.Label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="32dp"
+        android:labelFor="@id/departments_value"
+        android:text="@string/top_sheet_departments_label"
+        app:layout_constraintTop_toBottomOf="@id/arrival_time_value" />
+
+    <ImageView
+        android:id="@+id/departments_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_hospital"
+        app:layout_constraintStart_toStartOf="@id/departments_title"
+        app:layout_constraintTop_toTopOf="@id/departments_value" />
+
+    <TextView
+        android:id="@+id/departments_value"
+        style="@style/TextAppearance.App.TopSheet.Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/departments_icon"
+        app:layout_constraintTop_toBottomOf="@id/departments_title"
+        tools:text="Medicina\n\nPronto soccorso\n\nTrasfusioni" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/start_button"
+        style="@style/Widget.App.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="56dp"
+        android:layout_marginTop="120dp"
+        android:paddingVertical="16dp"
+        android:text="@string/start_label"
+        app:layout_constraintTop_toBottomOf="@id/departments_value" />
+
+    <TextView
+        style="@style/TextAppearance.App.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="56dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/top_sheet_start_hint_label"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/start_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

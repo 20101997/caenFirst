@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@+id/homeFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.grupposts.trasporti.features.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.grupposts.trasporti.features.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_departmentsFragment"
+            app:destination="@id/departmentsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/departmentsFragment"
+        android:name="com.grupposts.trasporti.features.departments.DepartmentsFragment"
+        android:label="fragment_department_list"
+        tools:layout="@layout/fragment_departments">
+        <action
+            android:id="@+id/action_departmentsFragment_to_departmentActionFragment"
+            app:destination="@id/departmentActionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/departmentActionFragment"
+        android:name="com.grupposts.trasporti.features.departments.DepartmentActionFragment"
+        android:label="fragment_department_detail"
+        tools:layout="@layout/fragment_department_action">
+        <action
+            android:id="@+id/action_departmentActionFragment_to_container_navigation"
+            app:destination="@id/container_navigation" />
+    </fragment>
+
+    <!--    <dialog-->
+    <!--        android:id="@+id/loadingDialog"-->
+    <!--        android:name="com.grupposts.trasporti.LoadingDialog"-->
+    <!--        android:label="dialog_loading"-->
+    <!--        tools:layout="@layout/dialog_loading" />-->
+
+    <dialog
+        android:id="@+id/customAlertDialog"
+        android:name="com.grupposts.trasporti.views.CustomAlertDialog"
+        android:label="dialog_custom_alert"
+        tools:layout="@layout/dialog_custom_alert">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="message"
+            app:argType="string" />
+    </dialog>
+
+    <action
+        android:id="@+id/action_global_departmentsFragment"
+        app:destination="@id/departmentsFragment"
+        app:popUpTo="@id/homeFragment" />
+
+    <include app:graph="@navigation/container_graph" />
+
+</navigation>

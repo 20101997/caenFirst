@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_navigation"
+    app:startDestination="@+id/addContainerFragment">
+
+    <fragment
+        android:id="@+id/addContainerFragment"
+        android:name="com.grupposts.trasporti.features.container.addcontainer.AddContainerFragment"
+        android:label="fragment_add_container"
+        tools:layout="@layout/fragment_add_container">
+        <argument
+            android:name="name"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_addContainerFragment_to_scanContainerFragment"
+            app:destination="@id/scanContainerFragment" />
+        <action
+            android:id="@+id/action_addContainerFragment_to_containersFragment"
+            app:destination="@id/containersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scanContainerFragment"
+        android:name="com.grupposts.trasporti.features.container.scancontainer.ScanContainerFragment"
+        android:label="fragment_scan_container"
+        tools:layout="@layout/fragment_scan_container">
+        <action
+            android:id="@+id/action_scanContainerFragment_to_productsFragment"
+            app:destination="@id/productsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="com.grupposts.trasporti.features.container.products.ProductsFragment"
+        android:label="fragment_products"
+        tools:layout="@layout/fragment_products">
+        <action
+            android:id="@+id/action_productsFragment_to_scanContainerFragment"
+            app:destination="@id/scanContainerFragment" />
+        <action
+            android:id="@+id/action_productsFragment_to_containersFragment"
+            app:destination="@id/containersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/containersFragment"
+        android:name="com.grupposts.trasporti.features.container.containers.ContainersFragment"
+        android:label="fragment_containers"
+        tools:layout="@layout/fragment_containers">
+        <action
+            android:id="@+id/action_containersFragment_to_signatureFragment"
+            app:destination="@id/signatureFragment" />
+        <action
+            android:id="@+id/action_containersFragment_to_addContainerFragment"
+            app:destination="@id/addContainerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signatureFragment"
+        android:name="com.grupposts.trasporti.features.container.signature.SignatureFragment"
+        android:label="fragment_signature"
+        tools:layout="@layout/fragment_signature" />
+
+</navigation>

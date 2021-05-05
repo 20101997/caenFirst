@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:paddingVertical="18dp">
+
+    <ImageView
+        android:id="@+id/iv_truck"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="28dp"
+        android:background="@drawable/bg_circle_icon"
+        android:elevation="8dp"
+        android:padding="14dp"
+        android:src="@drawable/ic_truck"
+        android:backgroundTint="@color/truck_background_tint"
+        app:layout_constraintBottom_toBottomOf="@id/tv_departments_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_hospital_name" />
+
+    <TextView
+        android:id="@+id/tv_destination_hour"
+        style="@style/TextAppearance.App.SemiBold.Red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        android:text="@string/hour"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_hospital_name"
+        app:layout_constraintStart_toEndOf="@+id/iv_truck"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_hospital_name"
+        style="@style/TextAppearance.App.SemiBold.Blue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="8dp"
+        android:maxLines="2"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_truck"
+        app:layout_constraintTop_toBottomOf="@+id/tv_destination_hour"
+        tools:text="Ospedale dell'Angelo, Mestre" />
+
+    <TextView
+        android:id="@+id/tv_departments_name"
+        style="@style/TextAppearance.App.SemiBold.Blue60"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="8dp"
+        android:maxLines="2"
+        android:text="@string/departments"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_truck"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hospital_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

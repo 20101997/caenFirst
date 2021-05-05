@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    tools:context=".features.container.addcontainer.AddContainerFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_hospital_origin"
+            style="@style/TextAppearance.App.SemiBold.Blue60"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:text="@string/hospital_of_origin"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_hospital_origin_name"
+            style="@style/TextAppearance.App.SemiBold.Blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_hospital_origin"
+            tools:text="Ospedale dell'Angelo, Mestre" />
+
+        <TextView
+            android:id="@+id/tv_department_origin"
+            style="@style/TextAppearance.App.SemiBold.Blue60"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/department_of_origin"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_hospital_origin_name" />
+
+        <TextView
+            android:id="@+id/tv_department_origin_name"
+            style="@style/TextAppearance.App.SemiBold.Blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_department_origin"
+            tools:text="Medicina" />
+
+        <TextView
+            android:id="@+id/tv_destination_structure"
+            style="@style/TextAppearance.App.SemiBold.Blue60"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="24dp"
+            android:labelFor="@id/act_destination_structure"
+            android:text="@string/destination_structure"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_department_origin_name" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_destination_structure"
+            style="@style/Widget.App.TextInputLayout.Dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_destination_structure">
+
+            <AutoCompleteTextView
+                android:id="@+id/act_destination_structure"
+                style="@style/TextAppearance.App.SemiBold.Blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:text="@string/select_structure_destination"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_destination_department"
+            style="@style/TextAppearance.App.SemiBold.Blue60"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="24dp"
+            android:labelFor="@id/act_destination_department"
+            android:text="@string/department_destination"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/til_destination_structure" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_destination_department"
+            style="@style/Widget.App.TextInputLayout.Dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_destination_department">
+
+            <AutoCompleteTextView
+                android:id="@+id/act_destination_department"
+                style="@style/TextAppearance.App.SemiBold.Blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:text="@string/select_department_destination"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/destination_department_progress_indicator"
+            style="@style/Widget.MaterialComponents.CircularProgressIndicator.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            app:layout_constraintBottom_toBottomOf="@id/til_destination_department"
+            app:layout_constraintEnd_toEndOf="@id/til_destination_department"
+            app:layout_constraintStart_toStartOf="@id/til_destination_department"
+            app:layout_constraintTop_toTopOf="@id/til_destination_department" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_temperature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@color/blue"
+            app:layout_constraintTop_toBottomOf="@id/til_destination_department">
+
+            <TextView
+                android:id="@+id/tv_temperature_tracking"
+                style="@style/TextAppearance.App.SemiBold.White"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/temperature_tracking"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.grupposts.trasporti.views.CheckableImageButton
+                android:id="@+id/ib_thermometer"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_circle_icon"
+                android:backgroundTint="@color/thermometer_background_tint"
+                android:src="@drawable/ic_thermometer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_temperature_tracking"
+                tools:checked="true" />
+
+            <TextView
+                android:id="@+id/tv_temperature_switch"
+                style="@style/TextAppearance.App.SemiBold.White"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/on"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/ib_thermometer"
+                app:layout_constraintStart_toEndOf="@id/ib_thermometer"
+                app:layout_constraintTop_toTopOf="@id/ib_thermometer" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_scan_qrcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/cl_note"
+            app:layout_constraintTop_toBottomOf="@id/cl_temperature">
+
+            <ImageView
+                android:id="@+id/iv_scan_single_qrcode"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="32dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_single_qrcode_56dp"
+                app:layout_constraintEnd_toStartOf="@id/divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_scan_single_qrcode"
+                style="@style/TextAppearance.App.SemiBold.Blue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="42dp"
+                android:layout_marginBottom="52dp"
+                android:maxLines="4"
+                android:text="@string/scan_single_qrcode"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_scan_single_qrcode" />
+
+            <ImageView
+                android:id="@+id/iv_scan_multiple_qrcode"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="32dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_multiple_qrcode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/divider"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_scan_multiple_qrcode"
+                style="@style/TextAppearance.App.SemiBold.Blue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="42dp"
+                android:layout_marginBottom="52dp"
+                android:maxLines="4"
+                android:text="@string/scan_multiple_qrcode"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/divider"
+                app:layout_constraintTop_toBottomOf="@id/iv_scan_multiple_qrcode" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="16dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/cl_scan_qrcode">
+
+            <TextView
+                android:id="@+id/tv_note"
+                style="@style/TextAppearance.App.SemiBold.Blue60"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/note_camp"
+                android:textSize="12sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_note"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="24dp"
+                android:hint="@string/write_a_note"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/text_input_border"
+                app:boxStrokeWidth="1dp"
+                app:boxStrokeWidthFocused="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_note">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:minLines="2"
+                    android:textSize="12sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_selected_products"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/cl_note">
+
+            <TextView
+                android:id="@+id/tv_selected_products"
+                style="@style/TextAppearance.App.SemiBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:text="@string/selected_products"
+                android:textAlignment="center"
+                android:textColor="@color/darkBlue"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_selected_products"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false"
+                android:paddingBottom="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/tv_selected_products"
+                tools:itemCount="8"
+                tools:listitem="@layout/item_selected_product_list" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/edit_button"
+                style="@style/Widget.App.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:padding="16dp"
+                android:text="@string/edit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_selected_products" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
